@@ -4,12 +4,11 @@
   "description": "Baseado no curso API em NodeJS com Clean Architecture e TDD - Mango",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "lint-staged": {
     "*.js": [
-      "standard --fix",
-      "git add"
+      "standard --fix"
     ]
   },
   "husky": {
@@ -30,6 +29,7 @@
   "homepage": "https://github.com/ArisvaldoJRC/clean-node-api#readme",
   "devDependencies": {
     "husky": "^4.2.5",
+    "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
     "standard": "^14.3.4"
   }
