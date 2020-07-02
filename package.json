@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node app.js",
-    "test": "jest --watchAll --noStackTrace --silent",
-    "test:staged": "jest --passWithNoTeSsts --findRelatedTests --noStackTrace --silent",
-    "test:ci": "jest --coverage --noStackTrace --silent"
+    "test": "jest --passWithNoTeSsts --noStackTrace --silent",
+    "test:unit": "npm test -- --watch",
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:ci": "npm test -- --coverage"
   },
   "standard": {
     "env": ["jest"]
