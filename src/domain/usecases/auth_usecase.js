@@ -22,6 +22,7 @@ export default class AuthUseCase {
     if (!isValid) {
       return null
     }
-    await this.tokenGenerator.generate(user.id)
+    const accessToken = await this.tokenGenerator.generate(user.id)
+    return accessToken
   }
 }
