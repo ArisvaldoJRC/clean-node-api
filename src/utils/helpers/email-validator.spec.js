@@ -1,5 +1,6 @@
 import EmailValidator from './email-validator'
 import validator from 'validator'
+import { MissingParamError } from '../errors'
 
 const makeSut = () => {
   return new EmailValidator()
@@ -22,5 +23,10 @@ describe('Email Validator', () => {
     const sut = makeSut()
     sut.isValid('any_email@mail.com')
     expect(validator.email).toBe('any_email@mail.com')
+  })
+
+  it('Should throw if no email are provided', async () => {
+    const sut = makeSut()
+    expect(() => { sut.isValid() }).toThrow(new MissingParamError('email'))
   })
 })
