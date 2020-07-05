@@ -1,11 +1,5 @@
 import bcrypt from 'bcrypt'
-
-class Encrypter {
-  compare (value, hash) {
-    const isValid = bcrypt.compare(value, hash)
-    return isValid
-  }
-}
+import Encrypter from './encrypter'
 
 const makeSut = () => {
   return new Encrypter()
