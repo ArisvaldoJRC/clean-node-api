@@ -1,7 +1,14 @@
 import bcrypt from 'bcrypt'
+import { MissingParamError } from '../errors'
 
 export default class Encrypter {
-  compare (value, hash) {
+  async compare (value, hash) {
+    if (!value) {
+      throw new MissingParamError('value')
+    }
+    if (!hash) {
+      throw new MissingParamError('hash')
+    }
     const isValid = bcrypt.compare(value, hash)
     return isValid
   }
